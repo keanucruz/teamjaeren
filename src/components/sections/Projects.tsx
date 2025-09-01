@@ -454,29 +454,29 @@ const Projects = () => {
                 {/* Lightbox Dialog */}
                 <Dialog open={isOpen} onOpenChange={setIsOpen}>
                     <DialogContent
-                        className="max-w-6xl w-full h-[90vh] p-0 bg-background/95 backdrop-blur-sm"
+                        className="max-w-6xl w-full max-h-[95vh] h-[95vh] p-0 bg-background/95 backdrop-blur-sm"
                         onKeyDown={handleKeyDown}
                     >
                         {selectedProject && (
                             <div className="relative w-full h-full flex flex-col">
                                 {/* Header */}
-                                <div className="flex items-center justify-between p-6 border-b border-border/50">
+                                <div className="flex items-center justify-between p-4 border-b border-border/50">
                                     <div>
-                                        <h3 className="text-2xl font-bold text-foreground">
+                                        <h3 className="text-xl font-bold text-foreground">
                                             {selectedProject.title}
                                         </h3>
-                                        <p className="text-muted-foreground">
+                                        <p className="text-sm text-muted-foreground">
                                             Bilde {currentImageIndex + 1} av {selectedProject.images.length}
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Image Container */}
-                                <div className="flex-1 relative overflow-hidden">
+                                <div className="flex-1 relative overflow-hidden flex items-center justify-center min-h-0">
                                     <img
                                         src={selectedProject.images[currentImageIndex]}
                                         alt={`${selectedProject.title} - Bilde ${currentImageIndex + 1}`}
-                                        className="w-full h-full object-contain"
+                                        className="max-w-full max-h-[70vh] object-contain"
                                     />
 
                                     {/* Navigation Buttons */}
@@ -502,13 +502,13 @@ const Projects = () => {
 
                                 {/* Thumbnail Strip */}
                                 {selectedProject.images.length > 1 && (
-                                    <div className="p-4 border-t border-border/50">
+                                    <div className="p-3 border-t border-border/50">
                                         <div className="flex gap-2 overflow-x-auto">
                                             {selectedProject.images.map((image, index) => (
                                                 <button
                                                     key={index}
                                                     onClick={() => setCurrentImageIndex(index)}
-                                                    className={`flex-shrink-0 w-16 h-16 rounded overflow-hidden border-2 transition-all duration-200 ${index === currentImageIndex
+                                                    className={`flex-shrink-0 w-12 h-12 rounded overflow-hidden border-2 transition-all duration-200 ${index === currentImageIndex
                                                         ? 'border-primary'
                                                         : 'border-transparent hover:border-border'
                                                         }`}
