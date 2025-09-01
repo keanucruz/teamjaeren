@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark mode is default - company brand theme */
+    --background: 202 15% 8%;
+    --foreground: 180 9% 98%;
+
+    --card: 202 15% 10%;
+    --card-foreground: 180 9% 98%;
+
+    --popover: 202 15% 10%;
+    --popover-foreground: 180 9% 98%;
+
+    /* Primary: Company brand blue */
+    --primary: 202 30% 31%;
+    --primary-foreground: 180 9% 98%;
+    --primary-glow: 202 40% 45%;
+
+    /* Secondary: Company grey for accents */
+    --secondary: 201 11% 54%;
+    --secondary-foreground: 180 9% 98%;
+
+    --muted: 201 11% 15%;
+    --muted-foreground: 201 11% 70%;
+
+    /* Accent: Lighter brand blue */
+    --accent: 202 35% 45%;
+    --accent-foreground: 180 9% 98%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 36 100% 98%;
+
+    --border: 201 11% 18%;
+    --input: 201 11% 15%;
+    --ring: 202 30% 31%;
+
+    --radius: 0rem;
+
+    /* Company brand gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(202 15% 4%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(202 15% 12%));
+
+    /* Company brand shadows */
+    --shadow-construction: 0 10px 30px -5px hsl(var(--primary) / 0.4), inset 0 1px 0 hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 50px hsl(var(--primary-glow) / 0.3), 0 4px 20px hsl(var(--primary) / 0.4);
+    --shadow-depth: 0 25px 50px -12px hsl(202 15% 0% / 0.8), 0 4px 12px hsl(202 15% 0% / 0.6);
+
+    /* Typography scale for company branding */
+    --font-industrial: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Animation variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Light mode override (keeping dark as default) */
+  .light {
+    --background: 180 9% 98%;
+    --foreground: 202 30% 31%;
+
+    --card: 180 9% 97%;
+    --card-foreground: 202 30% 31%;
+
+    --popover: 180 9% 97%;
+    --popover-foreground: 202 30% 31%;
+
+    --primary: 202 30% 31%;
+    --primary-foreground: 180 9% 98%;
+
+    --secondary: 201 11% 85%;
+    --secondary-foreground: 202 30% 31%;
+
+    --muted: 201 11% 95%;
+    --muted-foreground: 201 11% 45%;
+
+    --accent: 202 35% 45%;
+    --accent-foreground: 180 9% 98%;
+
+    --border: 201 11% 88%;
+    --input: 201 11% 90%;
+    --ring: 202 30% 31%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(180 9% 92%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-industrial);
+    background: var(--gradient-hero);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer components {
+
+  /* Hero section utilities */
+  .hero-title {
+    @apply text-5xl md:text-7xl lg:text-8xl font-black tracking-tight;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: var(--shadow-glow);
+  }
+
+  .construction-card {
+    @apply relative overflow-hidden border border-border/50;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-depth);
+    transition: var(--transition-smooth);
+  }
+
+  .construction-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-construction);
+  }
+
+  /* Company brand button variants */
+  .btn-construction {
+    @apply relative px-8 py-4 font-semibold text-lg;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-construction);
+    transition: var(--transition-bounce);
+  }
+
+  .btn-construction:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Navigation styles */
+  .nav-blur {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: hsl(var(--background) / 0.8);
+    border-bottom: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Text glow effects */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  /* Text readability for hero section */
+  .text-hero-readable {
+    text-shadow:
+      2px 2px 0px white,
+      -2px -2px 0px white,
+      2px -2px 0px white,
+      -2px 2px 0px white,
+      0px 2px 0px white,
+      2px 0px 0px white,
+      0px -2px 0px white,
+      -2px 0px 0px white,
+      3px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-hero-subtitle {
+    text-shadow:
+      1px 1px 0px rgba(0, 0, 0, 0.8),
+      -1px -1px 0px rgba(0, 0, 0, 0.8),
+      1px -1px 0px rgba(0, 0, 0, 0.8),
+      -1px 1px 0px rgba(0, 0, 0, 0.8),
+      2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Animation classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: var(--shadow-construction);
+    }
+
+    to {
+      box-shadow: var(--shadow-glow);
+    }
+  }
+
+  /* Parallax utilities */
+  .parallax-slow {
+    transform: translateY(calc(var(--scroll-y) * 0.5px));
+  }
+
+  .parallax-fast {
+    transform: translateY(calc(var(--scroll-y) * -0.3px));
+  }
+}
