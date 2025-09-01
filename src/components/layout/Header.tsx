@@ -110,13 +110,13 @@ const Header = () => {
               </button>
 
               <button
-                onClick={() => scrollToSection('gallery')}
+                onClick={() => scrollToSection('projects')}
                 className={`transition-colors font-medium ${isInHero
                   ? 'text-white hover:text-primary'
                   : 'text-foreground hover:text-primary'
                   }`}
               >
-                Galleri
+                Prosjekter
               </button>
               <button
                 onClick={() => scrollToSection('testimonials')}
@@ -163,10 +163,10 @@ const Header = () => {
                   Om Oss
                 </button>
                 <button
-                  onClick={() => scrollToSection('gallery')}
+                  onClick={() => scrollToSection('projects')}
                   className="text-left text-foreground hover:text-primary transition-colors font-medium"
                 >
-                  Galleri
+                  Prosjekter
                 </button>
                 <button
                   onClick={() => scrollToSection('testimonials')}

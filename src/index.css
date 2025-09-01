@@ -130,7 +130,7 @@ All colors MUST be HSL.
 
   /* Hero section utilities */
   .hero-title {
-    @apply text-5xl md:text-7xl lg:text-8xl font-black tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-black tracking-tight;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
