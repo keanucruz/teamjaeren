@@ -90,75 +90,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Visual Showcase */}
-        <div className="mt-24">
-          <h3 className="text-3xl font-bold text-center mb-12">Team Jæren Fordelen</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Quality Craftsmanship */}
-            <div className="construction-card overflow-hidden group">
-              <div className="relative h-64">
-                <img
-                  src="/gallery/476449935_2131634860628285_7349775265480968078_n.jpg"
-                  alt="Quality craftsmanship - detailed interior work"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h4 className="text-xl font-bold mb-2">Kvalitetshåndverk</h4>
-                  <p className="text-sm opacity-90">Hver detalj betyr noe i vårt arbeid</p>
-                </div>
-              </div>
-            </div>
 
-            {/* Skilled Team */}
-            <div className="construction-card overflow-hidden group">
-              <div className="relative h-64">
-                <img
-                  src="/gallery/487478839_2175370532921384_6515506247341114399_n.jpg"
-                  alt="Skilled team working on construction project"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h4 className="text-xl font-bold mb-2">Erfaren Team</h4>
-                  <p className="text-sm opacity-90">Profesjonelle håndverkere og lærlinger</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Reliable Service */}
-            <div className="construction-card overflow-hidden group">
-              <div className="relative h-64">
-                <img
-                  src="/gallery/488581623_2180745282383909_9140438318457290718_n.jpg"
-                  alt="Reliable construction service - foundation work"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h4 className="text-xl font-bold mb-2">Pålitelig Service</h4>
-                  <p className="text-sm opacity-90">Betrodd av kunder over hele Jæren</p>
-                </div>
-              </div>
-            </div>
-
-            {/* On-Time Delivery */}
-            <div className="construction-card overflow-hidden group">
-              <div className="relative h-64">
-                <img
-                  src="/gallery/106134964_1000699030388546_8813291048160137992_n.jpg"
-                  alt="Completed project delivered on time"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h4 className="text-xl font-bold mb-2">Levering i Tide</h4>
-                  <p className="text-sm opacity-90">Prosjekter fullført som lovet</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

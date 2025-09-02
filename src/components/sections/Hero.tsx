@@ -14,7 +14,7 @@ const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-switch images every 5 seconds (pause on hover)
+  // Auto-switch images every 2.5 seconds (pause on hover)
   useEffect(() => {
     if (isPaused) return;
 
@@ -22,7 +22,7 @@ const Hero = () => {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % heroImages.length
       );
-    }, 5000);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [heroImages.length, isPaused]);
